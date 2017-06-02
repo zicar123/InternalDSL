@@ -1,0 +1,4 @@
+C:\translator\InternalDSL\BaseModel\bin\Debug\BaseModel.dll
+C:\translator\InternalDSL\BaseModel\bin\Debug\BaseModel.pdb
+C:\translator\InternalDSL\BaseModel\obj\Debug\BaseModel.dll
+C:\translator\InternalDSL\BaseModel\obj\Debug\BaseModel.pdb

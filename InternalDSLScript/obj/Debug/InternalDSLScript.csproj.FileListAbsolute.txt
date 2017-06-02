@@ -1,0 +1,7 @@
+C:\translator\InternalDSL\InternalDSLScript\obj\Debug\InternalDSLScript.csprojResolveAssemblyReference.cache
+C:\translator\InternalDSL\InternalDSLScript\bin\Debug\InternalDSLScript.dll
+C:\translator\InternalDSL\InternalDSLScript\bin\Debug\InternalDSLScript.pdb
+C:\translator\InternalDSL\InternalDSLScript\obj\Debug\InternalDSLScript.dll
+C:\translator\InternalDSL\InternalDSLScript\obj\Debug\InternalDSLScript.pdb
+C:\translator\InternalDSL\InternalDSLScript\bin\Debug\BaseModelScript.dll
+C:\translator\InternalDSL\InternalDSLScript\bin\Debug\BaseModelScript.pdb

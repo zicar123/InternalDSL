@@ -4,49 +4,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using InternalDSL.SceneClasses;
+using BaseModel;
 
 namespace InternalDSL
 {
     public class SceneBuilder
     {
-        public List<PhantomBuilder> PhantomsBuilders { get; set; }
-        public List<LidarBuilder> LidarsBuilders { get; set; }
-        public List<ObserverBuilder> ObserversBuilders { get; set; }
-        public List<PolygonBuilder> PolygonsBuilders { get; set; }
-        public List<CoefficientBuilder> CoefficientsBuilders { get; set; }
-
+        public Scene baseScene;
         public SceneBuilder()
         {
-            PhantomsBuilders = new List<PhantomBuilder>();
-            LidarsBuilders = new List<LidarBuilder>();
-            ObserversBuilders = new List<ObserverBuilder>();
-            PolygonsBuilders = new List<PolygonBuilder>();
-            CoefficientsBuilders = new List<CoefficientBuilder>();
+            baseScene = new Scene();
         }
 
         public PolygonBuilder polygon()
         {
-            PolygonBuilder builder = new PolygonBuilder(this);
-            PolygonsBuilders.Add(builder);
-            return builder;
+            baseScene.Polygons.Add(new Polygon());
+            return new PolygonBuilder(this);
         }
         public PhantomBuilder phantom()
         {
-            PhantomBuilder builder = new PhantomBuilder(this);
-            PhantomsBuilders.Add(builder);
-            return builder;
+            baseScene.Phantoms.Add(new Phantom());
+            return new PhantomBuilder(this);
         }
         public LidarBuilder lidar()
         {
-            LidarBuilder builder = new LidarBuilder(this);
-            LidarsBuilders.Add(builder);
-            return builder;
+            baseScene.Lidars.Add(new Lidar());
+            return new LidarBuilder(this);
+        }
+        public ObserverBuilder observer()
+        {
+            baseScene.Observers.Add(new Observer());
+            return new ObserverBuilder(this);
         }
         public CoefficientBuilder coefficient()
         {
-            CoefficientBuilder builder = new CoefficientBuilder(this);
-            CoefficientsBuilders.Add(builder);
-            return builder;
+            baseScene.Coefficients.Add(new Coefficient());
+            return new CoefficientBuilder(this);
+        }
+        public Scene end()
+        {
+            return baseScene;
         }
         public static SceneBuilder scene()
         {

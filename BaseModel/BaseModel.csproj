@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FC6BE4E5-C364-4358-8B50-BEFD222081BB}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{D4C75F60-D808-4BE2-8674-1F95984F6AAA}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Test</RootNamespace>
-    <AssemblyName>Test</AssemblyName>
+    <RootNamespace>BaseModel</RootNamespace>
+    <AssemblyName>BaseModel</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,32 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Coefficient.cs" />
+    <Compile Include="Lidar.cs" />
+    <Compile Include="Observer.cs" />
+    <Compile Include="Phantom.cs" />
+    <Compile Include="Polygon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BaseModelScript\BaseModelScript.csproj">
-      <Project>{e2d37508-235c-4ca1-a77d-840e340c7626}</Project>
-      <Name>BaseModelScript</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BaseModel\BaseModel.csproj">
-      <Project>{d4c75f60-d808-4be2-8674-1f95984f6aaa}</Project>
-      <Name>BaseModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\InternalDSLScript\InternalDSLScript.csproj">
-      <Project>{e476e6d6-aa72-4c3a-88b0-2db09b25b57b}</Project>
-      <Name>InternalDSLScript</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\InternalDSL\InternalDSL.csproj">
-      <Project>{d597df72-6f5e-4949-92cc-7c6fda3bcbab}</Project>
-      <Name>InternalDSL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <Compile Include="Scene.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
