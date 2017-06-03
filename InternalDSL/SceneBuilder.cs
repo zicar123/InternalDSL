@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using InternalDSL.SceneClasses;
 using BaseModel;
+using BaseModel.SceneBaseModel;
 
 namespace InternalDSL
 {

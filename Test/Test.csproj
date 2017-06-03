@@ -49,25 +49,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BaseModelScript\BaseModelScript.csproj">
-      <Project>{e2d37508-235c-4ca1-a77d-840e340c7626}</Project>
-      <Name>BaseModelScript</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\BaseModel\BaseModel.csproj">
       <Project>{d4c75f60-d808-4be2-8674-1f95984f6aaa}</Project>
       <Name>BaseModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\InternalDSLScript\InternalDSLScript.csproj">
-      <Project>{e476e6d6-aa72-4c3a-88b0-2db09b25b57b}</Project>
-      <Name>InternalDSLScript</Name>
     </ProjectReference>
     <ProjectReference Include="..\InternalDSL\InternalDSL.csproj">
       <Project>{d597df72-6f5e-4949-92cc-7c6fda3bcbab}</Project>
       <Name>InternalDSL</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

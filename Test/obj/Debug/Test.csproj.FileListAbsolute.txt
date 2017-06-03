@@ -8,7 +8,3 @@ C:\translator\InternalDSL\Test\obj\Debug\Test.exe
 C:\translator\InternalDSL\Test\obj\Debug\Test.pdb
 C:\translator\InternalDSL\Test\bin\Debug\BaseModel.dll
 C:\translator\InternalDSL\Test\bin\Debug\BaseModel.pdb
-C:\translator\InternalDSL\Test\bin\Debug\BaseModelScript.dll
-C:\translator\InternalDSL\Test\bin\Debug\InternalDSLScript.dll
-C:\translator\InternalDSL\Test\bin\Debug\BaseModelScript.pdb
-C:\translator\InternalDSL\Test\bin\Debug\InternalDSLScript.pdb

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using InternalDSL;
 using System.Drawing;
 using BaseModel;
-using BaseModelScript;
+using BaseModel.SceneBaseModel;
+using BaseModel.ScriptBaseModel;
 
 namespace Test
 {
@@ -50,8 +51,13 @@ namespace Test
                .angles()
                    .angle()
                        .title("Кут")
-                       .range(-90, 90, 10)
                        .range(-90, 80, 5)
+                    .angle()
+                       .title("Кут_1")
+                       .range(-40, 10, 10)
+                       .angle()
+                       .title("Кут_2")
+                       .range(-15, 0, 5)
                .limitations()
                    .angleLimitation()
                        .title("Йоу")
@@ -67,47 +73,66 @@ namespace Test
                         .range(">0")
                .end();
 
-            foreach (Coefficient item in scene.Coefficients)
+            var driver = DriverBuilder
+                .driver()
+                    .calculateDistance()
+                    .scriptAnalysis()
+                    .buildTable(script)
+                    .end();
+
+            for (int j = 0; j < driver.combinations.Values.ToList()[0].Count; j++)
             {
-                Console.WriteLine(item.CoefficientTitle);
-                foreach (var intenralItem in item.FrequencyValues)
-                {
-                    Console.WriteLine(intenralItem);
-                }
+                Console.WriteLine(driver.combinations.Values.ToList()[0][j] +
+                    " " + driver.combinations.Values.ToList()[1][j] +
+                    " " + driver.combinations.Values.ToList()[2][j] +
+                    " " + (driver.combinations.Values.ToList()[3][j] as Lidar).LidarTitle +
+                    " " + (driver.combinations.Values.ToList()[4][j] as Observer).ObserverTitle +
+                    " " + (driver.combinations.Values.ToList()[5][j] as Coefficient).CoefficientTitle +
+                    " " + (driver.combinations.Values.ToList()[6][j] as Phantom).PhantomTitle +
+                    " " + (driver.combinations.Values.ToList()[7][j] as Polygon).PolygonTitle);
             }
-            Console.WriteLine();
-            foreach (Angle item in script.Angles)
-            {
-                Console.WriteLine(item.angleTitle);
-                Console.WriteLine(item.angleRange["angleFrom"]);
-                Console.WriteLine(item.angleRange["angleTo"]);
-                Console.WriteLine(item.angleRange["step"]);
-                Console.WriteLine();
-            }
-            Console.WriteLine("-----------------------");
-            foreach (Object item in script.Limitations.LimitationsCollection)
-            {
-                if (item is AngleLimitation)
-                {
-                    Console.WriteLine((item as AngleLimitation).angleTitle);
-                    Console.WriteLine((item as AngleLimitation).angleTitle);
-                    Console.WriteLine((item as AngleLimitation).angleLimitationRange[0]);
-                    if ((item as AngleLimitation).angleLimitationRange.Count == 2)
-                    {
-                        Console.WriteLine((item as AngleLimitation).angleLimitationRange[1]);
-                    }
-                }
-                if (item is PowerLimitation)
-                {
-                    Console.WriteLine((item as PowerLimitation).powerLimitationRange[0]);
-                    if ((item as PowerLimitation).powerLimitationRange.Count == 2)
-                    {
-                        Console.WriteLine((item as PowerLimitation).powerLimitationRange[1]);
-                    }
-                }
-            }
-            Console.WriteLine();
-            Console.WriteLine((script.BaseScene as Scene).Lidars[0].LidarTitle);
+
+            //foreach (Coefficient item in scene.Coefficients)
+            //{
+            //    Console.WriteLine(item.CoefficientTitle);
+            //    foreach (var intenralItem in item.FrequencyValues)
+            //    {
+            //        Console.WriteLine(intenralItem);
+            //    }
+            //}
+            //Console.WriteLine();
+            //foreach (Angle item in script.Angles)
+            //{
+            //    Console.WriteLine(item.angleTitle);
+            //    Console.WriteLine(item.angleRange["angleFrom"]);
+            //    Console.WriteLine(item.angleRange["angleTo"]);
+            //    Console.WriteLine(item.angleRange["step"]);
+            //    Console.WriteLine();
+            //}
+            //Console.WriteLine("-----------------------");
+            //foreach (Object item in script.Limitations.LimitationsCollection)
+            //{
+            //    if (item is AngleLimitation)
+            //    {
+            //        Console.WriteLine((item as AngleLimitation).angleTitle);
+            //        Console.WriteLine((item as AngleLimitation).angleTitle);
+            //        Console.WriteLine((item as AngleLimitation).angleLimitationRange[0]);
+            //        if ((item as AngleLimitation).angleLimitationRange.Count == 2)
+            //        {
+            //            Console.WriteLine((item as AngleLimitation).angleLimitationRange[1]);
+            //        }
+            //    }
+            //    if (item is PowerLimitation)
+            //    {
+            //        Console.WriteLine((item as PowerLimitation).powerLimitationRange[0]);
+            //        if ((item as PowerLimitation).powerLimitationRange.Count == 2)
+            //        {
+            //            Console.WriteLine((item as PowerLimitation).powerLimitationRange[1]);
+            //        }
+            //    }
+            //}
+            //Console.WriteLine();
+            //Console.WriteLine((script.BaseScene as Scene).Lidars[0].LidarTitle);
             Console.ReadKey();
         }
     }

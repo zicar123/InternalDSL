@@ -40,14 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coefficient.cs" />
-    <Compile Include="Lidar.cs" />
-    <Compile Include="Observer.cs" />
-    <Compile Include="Phantom.cs" />
-    <Compile Include="Polygon.cs" />
+    <Compile Include="SceneBaseModel\Coefficient.cs" />
+    <Compile Include="Driver.cs" />
+    <Compile Include="SceneBaseModel\Lidar.cs" />
+    <Compile Include="SceneBaseModel\Observer.cs" />
+    <Compile Include="SceneBaseModel\Phantom.cs" />
+    <Compile Include="SceneBaseModel\Polygon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scene.cs" />
+    <Compile Include="Script.cs" />
+    <Compile Include="ScriptBaseModel\Angle.cs" />
+    <Compile Include="ScriptBaseModel\AngleLimitation.cs" />
+    <Compile Include="ScriptBaseModel\Limitation.cs" />
+    <Compile Include="ScriptBaseModel\PowerLimitation.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

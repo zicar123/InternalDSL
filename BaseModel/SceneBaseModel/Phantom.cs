@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace BaseModel
+namespace BaseModel.SceneBaseModel
 {
     public class Phantom
     {

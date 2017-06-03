@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DriverBuilder.cs" />
     <Compile Include="SceneClasses\CoefficientBuilder.cs" />
     <Compile Include="SceneClasses\LidarBuilder.cs" />
     <Compile Include="SceneClasses\ObserverBuilder.cs" />
@@ -57,10 +58,6 @@
     <Compile Include="SetValue.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BaseModelScript\BaseModelScript.csproj">
-      <Project>{e2d37508-235c-4ca1-a77d-840e340c7626}</Project>
-      <Name>BaseModelScript</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BaseModel\BaseModel.csproj">
       <Project>{d4c75f60-d808-4be2-8674-1f95984f6aaa}</Project>
       <Name>BaseModel</Name>

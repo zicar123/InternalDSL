@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using InternalDSL.ScriptClasses;
-using BaseModelScript;
+using BaseModel;
 
 namespace InternalDSL
 {
